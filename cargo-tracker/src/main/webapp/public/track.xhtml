@@ -1,0 +1,65 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <ui:composition template="/WEB-INF/templates/common/public.xhtml">
+        <ui:define name="title">Track Cargo</ui:define>
+        <ui:define name="content">
+            <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+            <div class="ui-grid ui-grid-responsive">
+                <div class="ui-grid-row">
+                    <div class="ui-grid-col-2" id="leftCol"></div>
+                    <div class="ui-grid-col-8" id="mainCol">
+                        <br/>
+                        <h:form id="trackingForm">
+                            <p:outputLabel value="Tracking ID  " />
+                            <p:autoComplete id="trackIdInput" value="#{cargoTrackerBean.trackingId}" required="true" forceSelection="true" completeMethod="#{cargoTrackerBean.completeTracking}" />
+                            <p:commandButton value="Track!" actionListener="#{cargoTrackerBean.onTrackById}" ajax="false"/>
+                        </h:form>
+                        <br/>
+                        <h:panelGroup rendered="#{not empty cargoTrackerBean.cargo}">
+                            <div id="result">
+                                <p>Cargo <strong>#{cargoTrackerBean.cargo.trackingId}</strong> is currently <strong>#{cargoTrackerBean.cargo.statusText}</strong></p>
+                                <p>Estimated time of arrival in <strong>#{cargoTrackerBean.cargo.destination}</strong>: #{cargoTrackerBean.cargo.eta}</p>
+                                <f:facet name="nextActivity" rendered="#{cargoTrackerBean.cargo.nextExpectedActivity}"><p>.#{cargoTrackerBean.cargo.nextExpectedActivity}.</p></f:facet>
+
+                                <h:panelGroup rendered="#{cargoTrackerBean.cargo.misdirected}">
+                                    <p><i class="fa fa-exclamation-triangle" style="color: #9b2332"></i> Cargo is misdirected.</p>
+                                </h:panelGroup>
+
+                                <h:panelGroup rendered="#{not empty cargoTrackerBean.cargo.events}">
+                                    <strong>Handling History</strong><br/>
+
+                                    <ui:repeat value="#{cargoTrackerBean.cargo.events}" var="leg">
+                                        <ui:fragment rendered="#{leg.expected}">
+                                            &#160;&#160;<i class="fa fa-check" style="color: green"/>&#160;#{leg.description}<br/>
+                                        </ui:fragment>
+                                        <ui:fragment rendered="#{!leg.expected}">
+                                            &#160;&#160;<i class="fa fa-flag" style="color: #9b2332"/>&#160;#{leg.description}<br/>
+                                        </ui:fragment>     
+                                    </ui:repeat>
+                                </h:panelGroup>
+                            </div>
+                        </h:panelGroup>
+                    </div>
+                    <div class="ui-grid-col-2" id="rightCol" style="background-color: white;background:0;"></div>
+                </div>
+                <div class="ui-grid-row">
+                    <div class="ui-grid-col-2" id="leftCol2"></div>
+                    <div class="ui-grid-col-8" id="mainCol2">
+                        <br/>
+                        <h:panelGroup rendered="#{not empty cargoTrackerBean.destinationCoordinates}">
+                            <p:gmap center="#{cargoTrackerBean.destinationCoordinates}" fitBounds="true" zoom="2" model="#{cargoTrackerBean.markersModel}" type="PLAN"  style="width:620px;height:360px;">
+                                <!-- p:ajax event="pointSelect" listener="#{cargoTrackerBean.onPointSelect}"/ --> 
+                            </p:gmap>
+                        </h:panelGroup>
+                        <p:separator />
+                        <a href="#{request.contextPath}"><i class="fa fa-arrow-left fa-lg" style="color: #999999;"></i></a>
+                    </div>
+                    <div class="ui-grid-col-1" id="rightCol2"></div>
+                </div>
+            </div>
+        </ui:define>
+    </ui:composition>
+</html>
