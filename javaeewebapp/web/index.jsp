@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.util.Random" %><%--
   Created by IntelliJ IDEA.
   User: oblavat
   Date: 3/30/18
@@ -12,5 +12,10 @@
   </head>
   <body>
   Test
+  <%
+    Random rd = new Random();
+    System.out.println(rd.nextInt(500));
+    out.println("Random number: " + rd.nextInt(11));
+  %>
   </body>
 </html>
