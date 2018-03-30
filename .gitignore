@@ -1,4 +1,5 @@
 .idea
 cargo-tracker/target
 cargo-tracker/cargo-tracker.iml
+email_cruncher/*.iml
 
