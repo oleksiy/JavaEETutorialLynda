@@ -11,11 +11,16 @@
     <title>Java EE</title>
   </head>
   <body>
-  Test
-  <%
+  <form action="hellocalculator" method="post">
+      <input type="text" name="a"/>
+      <input type="text" name="b"/>
+      <input type="submit" value="add"/>
+  </form>
+
+  <%--<%
     Random rd = new Random();
     System.out.println(rd.nextInt(500));
     out.println("Random number: " + rd.nextInt(11));
-  %>
+  %>--%>
   </body>
 </html>
