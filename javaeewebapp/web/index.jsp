@@ -11,7 +11,7 @@
     <title>Java EE</title>
   </head>
   <body>
-  <form action="hello" method="post">
+  <form action="hellocalculator" method="post">
       <input type="text" name="a"/>
       <input type="text" name="b"/>
       <input type="submit" value="add"/>
