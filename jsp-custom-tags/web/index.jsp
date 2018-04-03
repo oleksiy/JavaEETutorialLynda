@@ -7,11 +7,13 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="ex" uri="/WEB-INF/custom.tld" %>
+<%@ taglib prefix="fr" uri="/WEB-INF/format/formatTag.tld" %>
 <html>
   <head>
     <title>User Defined Tags</title>
   </head>
   <body>
-  <ex:Hello message="Kiff, I have the captain's itch."/>
+  <ex:Hello message="Kiff, I have the captain's itch."/><br>
+  <fr:format text="test"/>
   </body>
 </html>
