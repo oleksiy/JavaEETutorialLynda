@@ -2,6 +2,7 @@
     <tlib-version>1.0</tlib-version>
     <jsp-version>2.0</jsp-version>
     <short-name>Example TLD</short-name>
+    <uri>tags.HelloTag</uri>
 
     <tag>
         <name>Hello</name>
@@ -12,5 +13,6 @@
             <name>message</name>
             <required>false</required>
         </attribute>
+
     </tag>
 </taglib>
