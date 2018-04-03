@@ -7,5 +7,10 @@
         <name>Hello</name>
         <tag-class>tags.HelloTag</tag-class>
         <body-content>scriptless</body-content>
+        
+        <attribute>
+            <name>message</name>
+            <required>false</required>
+        </attribute>
     </tag>
 </taglib>

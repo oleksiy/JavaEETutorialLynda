@@ -12,6 +12,6 @@
     <title>User Defined Tags</title>
   </head>
   <body>
-  <ex:Hello>Shitty</ex:Hello>
+  <ex:Hello message="Kiff, I have the captain's itch."/>
   </body>
 </html>
