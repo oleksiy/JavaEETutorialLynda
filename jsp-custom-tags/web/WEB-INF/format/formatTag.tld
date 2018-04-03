@@ -7,14 +7,29 @@
 
     <tlib-version>1.0</tlib-version>
     <short-name>formatTag</short-name>
-    <uri>formatTag.tld</uri>
+    <uri>/WEB-INF/format/formatTag</uri>
     <tag>
-        <name>format</name>
+        <name>formattag</name>
         <tag-class>tags.FormatTag</tag-class>
         <body-content>scriptless</body-content>
 
         <attribute>
             <name>text</name>
+            <required>false</required>
+        </attribute>
+
+        <attribute>
+            <name>color</name>
+            <required>true</required>
+        </attribute>
+        
+        <attribute>
+            <name>fontSize</name>
+            <required>false</required>
+        </attribute>
+
+        <attribute>
+            <name>isUpper</name>
             <required>false</required>
         </attribute>
     </tag>

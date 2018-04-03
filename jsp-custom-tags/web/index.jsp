@@ -13,7 +13,7 @@
     <title>User Defined Tags</title>
   </head>
   <body>
-  <ex:Hello message="Kiff, I have the captain's itch."/><br>
-  <fr:format/>
+      <ex:Hello message="Kiff, I have the captain's itch."/><br>
+      <fr:formattag color="green" fontSize="50" isUpper="true"> How cool is this?! </fr:formattag>
   </body>
 </html>

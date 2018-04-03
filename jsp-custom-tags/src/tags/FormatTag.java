@@ -40,7 +40,8 @@ public class FormatTag extends SimpleTagSupport {
         return isUpper;
     }
 
-    public void setUpper(boolean upper) {
+
+    public void setIsUpper(boolean upper) {
         isUpper = upper;
     }
 
@@ -57,7 +58,7 @@ public class FormatTag extends SimpleTagSupport {
         } else {
             out.println("Just Testing");
         }
-        /**
+
         String style = "";
         if(isUpper){
             style = "style=\"text-transform: uppercase; font-size:+"+fontSize+"px; color:"+color+"\"";
@@ -71,8 +72,7 @@ public class FormatTag extends SimpleTagSupport {
             out.println("</p>");
         } catch (IOException | JspException e){
             e.printStackTrace();
-        }
-         **/
+         }
 
     }
 }
