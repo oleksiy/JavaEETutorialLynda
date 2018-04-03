@@ -6,11 +6,12 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="ex" uri="/WEB-INF/custom.tld" %>
 <html>
   <head>
     <title>User Defined Tags</title>
   </head>
   <body>
-  $END$
+  <ex:Hello>Shitty</ex:Hello>
   </body>
 </html>
