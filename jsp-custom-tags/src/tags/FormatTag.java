@@ -9,7 +9,7 @@ import java.io.IOException;
 public class FormatTag extends SimpleTagSupport {
     private String text;
     private String color;
-    public int testSize;
+    public int fontSize;
     public boolean isUpper;
 
     public String getText() {
@@ -28,12 +28,12 @@ public class FormatTag extends SimpleTagSupport {
         this.color = color;
     }
 
-    public int getTestSize() {
-        return testSize;
+    public int getFontSize() {
+        return fontSize;
     }
 
-    public void setTestSize(int testSize) {
-        this.testSize = testSize;
+    public void setFontSize(int fontSize) {
+        this.fontSize = fontSize;
     }
 
     public boolean isUpper() {
@@ -57,10 +57,22 @@ public class FormatTag extends SimpleTagSupport {
         } else {
             out.println("Just Testing");
         }
+        /**
+        String style = "";
+        if(isUpper){
+            style = "style=\"text-transform: uppercase; font-size:+"+fontSize+"px; color:"+color+"\"";
+        } else {
+            style = "style=\"font-size:+"+fontSize+"px; color:"+color+"\"";
+        }
 
-        /***
-         * if(isUpper){
-         *
-         */
+        try {
+            out.println("<p " + style + ">");
+            getJspBody().invoke(out);
+            out.println("</p>");
+        } catch (IOException | JspException e){
+            e.printStackTrace();
+        }
+         **/
+
     }
 }

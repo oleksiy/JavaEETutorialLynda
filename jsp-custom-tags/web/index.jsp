@@ -14,6 +14,6 @@
   </head>
   <body>
   <ex:Hello message="Kiff, I have the captain's itch."/><br>
-  <fr:format text="test"/>
+  <fr:format/>
   </body>
 </html>
