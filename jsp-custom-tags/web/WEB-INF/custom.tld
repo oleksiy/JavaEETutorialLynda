@@ -6,6 +6,6 @@
     <tag>
         <name>Hello</name>
         <tag-class>tags.HelloTag</tag-class>
-        <body-content>empty</body-content>
+        <body-content>scriptless</body-content>
     </tag>
 </taglib>
