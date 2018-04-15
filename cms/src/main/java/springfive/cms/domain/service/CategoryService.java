@@ -2,6 +2,7 @@ package springfive.cms.domain.service;
 
 import org.springframework.stereotype.Service;
 import springfive.cms.domain.models.Category;
+import springfive.cms.domain.repository.CategoryRepository;
 
 import java.util.List;
 
