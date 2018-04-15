@@ -38,8 +38,8 @@ public class CategoryResource {
     @GetMapping
     @ApiOperation(value="List Categories", notes="List all categories")
     @ApiResponses(value={
-            @ApiResponse(code=200, message="Categories found"),
-            @ApiResponse(code=404, message="Category not found")
+            @ApiResponse(code = 200, message="Categories found"),
+            @ApiResponse(code = 404, message="Category not found")
     })
     public ResponseEntity<List<Category>> findAll(){
         return ResponseEntity.ok(Arrays.asList(new Category(), new Category()));
@@ -48,8 +48,8 @@ public class CategoryResource {
     @PostMapping
     @ApiOperation(value="Create Category.", notes="It permits to create a new category")
     @ApiResponses(value={
-            @ApiResponse(code=201, message="Category created successfully"),
-            @ApiResponse(code=400, message="Invalid request when attempting to create a Category!")
+            @ApiResponse(code = 201, message="Category created successfully"),
+            @ApiResponse(code = 400, message="Invalid request when attempting to create a Category!")
     })
     public ResponseEntity<Category> newCategory(@RequestBody CategoryRequest category){
         return new ResponseEntity<>(this.categoryService.create(category), HttpStatus.CREATED);
@@ -59,8 +59,8 @@ public class CategoryResource {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @ApiOperation(value="Remove category", notes="Ite permits to remove a category")
     @ApiResponses(value={
-            @ApiResponse(code=200, message = "Category removed successfully"),
-            @ApiResponse(code=404, message = "Category you're trying to delete is not found")
+            @ApiResponse(code = 200, message = "Category removed successfully"),
+            @ApiResponse(code = 404, message = "Category you're trying to delete is not found")
     })
     public void removeCategory(@PathVariable("id") String id){}
 
