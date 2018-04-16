@@ -1,7 +1,6 @@
 package springfive.cms.domain.models;
 
 import lombok.Data;
-import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -14,7 +13,7 @@ public class News {
 
     @Id
     @GeneratedValue(generator="system-uuid")
-    @GenericGenerator(name="system-uuid", strategy="uuid")
+    //@GenericGenerator(name="system-uuid", strategy="uuid")
     String id;
 
     String title;
@@ -24,13 +23,13 @@ public class News {
     @ManyToOne
     User author;
 
-    @ElementCollection
+    @OneToMany
     Set<User> mandatoryReviewers = new HashSet<>();
 
-    @OneToMany
+    @ElementCollection
     Set<Review> reviewers = new HashSet<>();
 
-    @ElementCollection
+    @OneToMany
     Set<Category> categories = new HashSet<>();
 
     @ElementCollection
