@@ -83,6 +83,11 @@
             <artifactId>webjars-locator</artifactId>
             <version>0.34</version>
         </dependency>
+        <dependency>
+            <groupId>net.sourceforge.htmlunit</groupId>
+            <artifactId>htmlunit</artifactId>
+            <scope>test</scope>
+        </dependency>
 
 
     </dependencies>
