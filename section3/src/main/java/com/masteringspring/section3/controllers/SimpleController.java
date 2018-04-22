@@ -11,7 +11,7 @@ import java.util.Date;
 public class SimpleController {
     @RequestMapping("/myError")
     public void getError() throws Exception{
-        throw new Exception("Error handling example");
+        throw new Exception("Error handling example!!!!!!!");
     }
 
     @RequestMapping("/orders")
